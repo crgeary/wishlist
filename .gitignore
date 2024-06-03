@@ -1,0 +1,10 @@
+# node
+node_modules
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# misc
+.DS_store
