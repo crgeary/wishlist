@@ -8,6 +8,9 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/a-h/templ"
+	"github.com/crgeary/wishlist/views"
 )
 
 func main() {
@@ -42,4 +45,22 @@ func main() {
 	defer cancelCtx()
 
 	s.Shutdown(ctx)
+}
+
+type App struct {
+	mux *http.ServeMux
+}
+
+func NewApp(ctx context.Context) (*App, error) {
+	app := &App{
+		mux: http.NewServeMux(),
+	}
+
+	app.mux.Handle("/", templ.Handler(views.Index()))
+
+	return app, nil
+}
+
+func (a *App) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	a.mux.ServeHTTP(w, r)
 }
