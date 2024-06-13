@@ -14,7 +14,7 @@ import (
 	"github.com/crgeary/wishlist/components"
 )
 
-func Index() templ.Component {
+func SignIn() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -27,25 +27,17 @@ func Index() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en-gb\"><head>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en-gb\" class=\"h-full\"><head>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = components.Head(components.HeadProps{
-			Title: "Wi$hli$t",
+			Title: "Sign In",
 		}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body><div class=\"container mx-auto\"><p>Home</p><nav><a href=\"/signin\">Sign In</a></nav></div>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = components.Footer().Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body class=\"flex items-center justify-center h-full\"><section class=\"w-1/3 border p-8\"><h1 class=\"text-center text-2xl\">Sign In</h1><form class=\"mt-4\"><div><label for=\"email\">E-mail address</label><div class=\"mt-1.5\"><input type=\"email\" name=\"email\" id=\"email\" class=\"border w-full p-1\"></div></div><div class=\"mt-2\"><label for=\"password\">Password</label><div class=\"mt-1.5\"><input type=\"password\" name=\"password\" id=\"password\" class=\"border w-full p-1\"></div></div></form><p class=\"text-center my-8\">or</p><div class=\"flex gap-4 justify-center\"><a href=\"#\"><img src=\"https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png\" width=\"156\"><!-- <img src=\"https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64_pressed.png\" width=\"156\"/> --></a> <a href=\"#\"><img src=\"https://developers.google.com/static/identity/images/branding_guideline_sample_lt_sq_lg.svg\" width=\"156\"></a></div></section></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

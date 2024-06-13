@@ -1,7 +1,10 @@
 package components
 
+import "time"
+import "strconv"
+
 templ Footer() {
-    <footer>
-        <p>&copy; Wishlist</p>
-    </footer>
+	<footer class="text-center mt-16">
+		<p>&copy; { strconv.Itoa(time.Now().Year()) } Wi$hli$t</p>
+	</footer>
 }

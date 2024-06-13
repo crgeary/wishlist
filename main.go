@@ -57,6 +57,7 @@ func NewApp(ctx context.Context) (*App, error) {
 	}
 
 	app.mux.Handle("/", templ.Handler(views.Index()))
+	app.mux.Handle("/signin", templ.Handler(views.SignIn()))
 
 	return app, nil
 }
