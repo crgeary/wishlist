@@ -18,6 +18,10 @@ tmp
 
 # misc
 .DS_store
+_
 
 # secrets
 .env
+
+# app
+/static

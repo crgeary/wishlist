@@ -1,5 +1,8 @@
 package components
 
+import "fmt"
+import "time"
+
 type HeadProps struct {
 	Title       string
 	Description string
@@ -13,6 +16,6 @@ templ Head(props HeadProps) {
 	if props.Description != "" {
 		<meta name="description" content={ props.Description }/>
 	}
-	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href={ fmt.Sprintf("/static/main.css?v=%d", time.Now().Unix()) }/>
 	<script defer src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
 }
