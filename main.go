@@ -59,6 +59,7 @@ func NewApp(ctx context.Context) (*App, error) {
 	app.mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	app.mux.Handle("/", templ.Handler(views.Index()))
+	app.mux.Handle("/register", templ.Handler(views.Register()))
 	app.mux.Handle("/signin", templ.Handler(views.SignIn()))
 
 	return app, nil
