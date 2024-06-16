@@ -1,0 +1,24 @@
+package components
+
+import "fmt"
+
+type InputFieldProps struct {
+	Attrs templ.Attributes
+
+	Label        string
+	ErrorMessage string
+	InputProps   InputProps
+}
+
+// Todo: Add aria-descrbedby="" to Input
+templ InputField(props InputFieldProps) {
+	<div { props.Attrs... }>
+		<label class="font-medium" for={ props.InputProps.Id }>{ props.Label }</label>
+		<div class="mt-1">
+			@Input(props.InputProps)
+		</div>
+		if props.ErrorMessage != "" {
+			<p id={ fmt.Sprintf("input-description-%s", props.InputProps.Id) } class="mt-0.5 text-sm text-red-500">{ props.ErrorMessage }</p>
+		}
+	</div>
+}

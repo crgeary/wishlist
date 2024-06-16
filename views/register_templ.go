@@ -37,7 +37,70 @@ func Register() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body class=\"flex items-center justify-center h-full\"><section class=\"w-1/3 border p-8\"><h1 class=\"text-2xl\">Register</h1><form class=\"mt-4\"><div><label for=\"name\">Name</label><div class=\"mt-1.5\"><input type=\"text\" name=\"name\" id=\"name\" class=\"border w-full p-1\"></div></div><div><label for=\"email\">E-mail address</label><div class=\"mt-1.5\"><input type=\"email\" name=\"email\" id=\"email\" class=\"border w-full p-1\"></div></div><div class=\"mt-2\"><label for=\"password\">Password</label><div class=\"mt-1.5\"><input type=\"password\" name=\"password\" id=\"password\" class=\"border w-full p-1\"></div></div><div class=\"mt-2\"><button class=\"bg-purple-400 px-2 py-1\">Register</button></div><p class=\"mt-2\">Or <a href=\"/signin\" class=\"underline\">sign in</a></p></form></section></body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body class=\"flex items-center justify-center h-full\"><section class=\"w-full max-w-lg border-2 border-violet-200 shadow-md shadow-violet-600/10 rounded p-8 bg-white\"><h1 class=\"text-4xl font-serif text-violet-700\">Register</h1><form class=\"mt-8\"><div class=\"flex flex-col gap-3\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = components.InputField(components.InputFieldProps{
+			Label: "Name",
+			InputProps: components.InputProps{
+				Type: "text",
+				Id:   "name",
+				Name: "name",
+			},
+		}).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = components.InputField(components.InputFieldProps{
+			Label: "E-mail address",
+			InputProps: components.InputProps{
+				Type: "email",
+				Id:   "email",
+				Name: "email",
+			},
+		}).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = components.InputField(components.InputFieldProps{
+			Label: "Password",
+			InputProps: components.InputProps{
+				Type: "password",
+				Id:   "password",
+				Name: "password",
+			},
+		}).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"mt-5\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Var2 := templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
+			templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
+			if !templ_7745c5c3_IsBuffer {
+				templ_7745c5c3_Buffer = templ.GetBuffer()
+				defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("Register")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			if !templ_7745c5c3_IsBuffer {
+				_, templ_7745c5c3_Err = io.Copy(templ_7745c5c3_W, templ_7745c5c3_Buffer)
+			}
+			return templ_7745c5c3_Err
+		})
+		templ_7745c5c3_Err = components.Button(components.ButtonProps{
+			FullWidth: true,
+			Variant:   "primary",
+		}).Render(templ.WithChildren(ctx, templ_7745c5c3_Var2), templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"mt-4 text-zinc-400\"><p>Or <a href=\"/signin\" class=\"underline text-zinc-700\">sign in</a></p></div></form></section></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -7,9 +7,12 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['"Inter Variable"', ...defaultTheme.fontFamily.sans],
+        serif: ['"Abril Fatface"', ...defaultTheme.fontFamily.serif],
       },
       boxShadow: {
-        inner:
+        "inner-t":
+          "inset 0 0.25rem 0.25rem var(--tw-shadow-color, rgb(0 0 0 / .1))",
+        "inner-b":
           "inset 0 -0.25rem 0.25rem var(--tw-shadow-color, rgb(0 0 0 / .1))",
       },
     },

@@ -12,10 +12,13 @@ templ Head(props HeadProps) {
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name="robots" content="index, follow"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 	<title>{ props.Title }</title>
 	if props.Description != "" {
 		<meta name="description" content={ props.Description }/>
 	}
 	<link rel="stylesheet" href={ fmt.Sprintf("/static/main.css?v=%d", time.Now().Unix()) }/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100..900&display=swap"/>
 	<script defer src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
 }

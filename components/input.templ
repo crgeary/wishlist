@@ -1,0 +1,23 @@
+package components
+
+import "github.com/crgeary/wishlist/utils"
+
+type InputProps struct {
+	Attrs templ.Attributes
+
+	Type        string
+	Id          string
+	Name        string
+	Placeholder string
+}
+
+templ Input(props InputProps) {
+	<input
+		type={ utils.Optional(props.Type, "text") }
+		id={ props.Id }
+		name={ props.Name }
+		placeholder={ props.Placeholder }
+		class="border border-zinc-300 bg-zinc-100 text-zinc-600 w-full rounded shadow-inner-t shadow-zinc-300/20 leading-none px-4 py-3.5"
+		{ props.Attrs... }
+	/>
+}
