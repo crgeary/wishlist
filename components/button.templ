@@ -1,0 +1,72 @@
+package components
+
+type ButtonProps struct {
+	Attrs templ.Attributes
+
+	Link      string
+	Variant   string
+	FullWidth bool
+	IconLeft  string
+	IconRight string
+}
+
+type buttonClasses struct {
+	Base             string
+	FullWidth        string
+	VariantPrimary   string
+	VariantSecondary string
+}
+
+var classes = buttonClasses{
+	Base:             "inline-flex items-center justify-center gap-2 border rounded-sm leading-none px-4 py-3.5 font-semibold transition-colors duration-200 shadow-inner",
+	FullWidth:        "w-full",
+	VariantPrimary:   "text-white border-purple-900 bg-purple-600 hover:bg-purple-500 shadow-purple-800/35",
+	VariantSecondary: "text-purple-800 border-purple-800 bg-purple-100 hover:bg-purple-200 shadow-purple-600/15",
+}
+
+templ Button(props ButtonProps) {
+	if props.Link != "" {
+		<a href={ templ.URL(props.Link) } class={ classes.Base, templ.KV(classes.FullWidth, props.FullWidth), templ.KV(classes.VariantPrimary, props.Variant == "primary"), templ.KV(classes.VariantSecondary, props.Variant == "secondary") } { props.Attrs... }>
+			@buttonInner(buttonInnerProps{
+				IconLeft:  props.IconLeft,
+				IconRight: props.IconRight,
+			}) {
+				{ children... }
+			}
+		</a>
+	} else {
+		<button class={ classes.Base, templ.KV(classes.FullWidth, props.FullWidth), templ.KV(classes.VariantPrimary, props.Variant == "primary"), templ.KV(classes.VariantSecondary, props.Variant == "secondary") } { props.Attrs... }>
+			@buttonInner(buttonInnerProps{
+				IconLeft:  props.IconLeft,
+				IconRight: props.IconRight,
+			}) {
+				{ children... }
+			}
+		</button>
+	}
+}
+
+type buttonInnerProps struct {
+	IconLeft  string
+	IconRight string
+}
+
+templ buttonInner(props buttonInnerProps) {
+	if props.IconLeft != "" {
+		<span class={ "inline-block w-4 h-4 fill-current" }>
+			@Icon(IconProps{
+				Icon: props.IconLeft,
+			})
+		</span>
+	}
+	<span>
+		{ children... }
+	</span>
+	if props.IconRight != "" {
+		<span class={ "inline-block w-4 h-4 fill-current" }>
+			@Icon(IconProps{
+				Icon: props.IconRight,
+			})
+		</span>
+	}
+}
