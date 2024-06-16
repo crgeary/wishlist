@@ -12,12 +12,60 @@ templ Index() {
 				Title: "Wi$hli$t",
 			})
 		</head>
-		<body>
+		<body class="bg-slate-100 bg-repeat bg-pattern-bubbles">
 			<div class="container mx-auto">
 				<p>Home</p>
 				<nav>
 					<a href="/signin">Sign In</a>
 				</nav>
+				<div class="mt-8 flex gap-2">
+					@components.Button(components.ButtonProps{
+						Link:    "#",
+						Variant: "primary",
+					}) {
+						Button
+					}
+					@components.Button(components.ButtonProps{
+						Link:     "#",
+						Variant:  "primary",
+						IconLeft: "bomb",
+					}) {
+						Button
+					}
+					@components.Button(components.ButtonProps{
+						Link:      "#",
+						Variant:   "primary",
+						IconRight: "bomb",
+					}) {
+						Button
+					}
+					@components.Button(components.ButtonProps{
+						Link:      "#",
+						Variant:   "secondary",
+						IconRight: "bomb",
+					}) {
+						Button
+					}
+				</div>
+				<div class="mt-2">
+					@components.Button(components.ButtonProps{
+						Link:      "#",
+						Variant:   "primary",
+						IconRight: "bomb",
+						FullWidth: true,
+					}) {
+						Button
+					}
+				</div>
+				<div class="mt-2">
+					@components.Button(components.ButtonProps{
+						Link:      "#",
+						Variant:   "secondary",
+						FullWidth: true,
+					}) {
+						Button
+					}
+				</div>
 			</div>
 			@components.Footer()
 		</body>

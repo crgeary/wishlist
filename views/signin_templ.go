@@ -37,7 +37,7 @@ func SignIn() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body class=\"flex items-center justify-center h-full\"><section class=\"w-full max-w-lg border-2 border-violet-200 shadow-md shadow-violet-600/10 rounded p-8 bg-white\"><h1 class=\"text-4xl font-serif text-violet-700\">Sign In</h1><form class=\"mt-8\"><div class=\"flex flex-col gap-3\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body class=\"bg-slate-100 bg-center bg-pattern-bubbles flex items-center justify-center h-full\"><section class=\"w-full max-w-lg border-2 border-primary-200 shadow-md shadow-primary-600/10 rounded p-8 bg-white\"><h1 class=\"text-4xl font-serif text-primary-700\">Sign In</h1><form class=\"mt-8\"><div class=\"flex flex-col gap-3\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
