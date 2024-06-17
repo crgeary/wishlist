@@ -86,7 +86,7 @@ func Input(props InputProps) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" class=\"border border-zinc-300 bg-zinc-100 text-zinc-600 w-full rounded shadow-inner-t shadow-zinc-300/20 leading-none px-4 py-3.5\"")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" class=\"border border-zinc-300 bg-zinc-100 text-zinc-600 w-full rounded shadow-inner-t shadow-zinc-300/20 leading-none px-4 py-3.5 focus:outline-primary-600\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
